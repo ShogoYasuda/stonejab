@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>Stonejab</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'http://fonts.googleapis.com/css?family=Galindo', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<div class="header">
+  <a href="/"><h1 class="site-title">StoneJab</h1></a>
+  <a href="/dungeons/new"><button class="write">投稿する</button></a>
+</div>
+
+<%= yield %>
+
+</body>
+</html>

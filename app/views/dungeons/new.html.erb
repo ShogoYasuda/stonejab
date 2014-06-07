@@ -1,0 +1,66 @@
+<div class="new-wrapper">
+
+  <div class="new-main">
+    <%= form_tag('/dungeons', method: :post, :class => "dungeon-form" ) do %>
+
+      <h2>ダンジョン選択</h2>
+      <div class="dungeon-list">
+
+        <% for i in 1..@advent %>
+          <%= radio_button_tag 'id', "#{i}", if session[:dungeon] == "d#{i}" then true else false end, class: "dungeon-btn" %>
+          <label for="dungeon_<%= i %>" class="dungeon" id="d<%= i %>"></label>
+        <% end %>
+
+      </div>
+
+      <div class="select-dungeon-error">※ダンジョンを選択してください</div>
+
+      <div class="select-monster">
+        <h2>パーティーモンスター選択</h2>
+
+        <div class="input-monster-box">
+          <%= text_field_tag 'leader', nil, class: 'input-leader', maxlength: "32", placeholder: 'リーダー', value: if session[:leader] != "avatar" then session[:leader] else "" end %>
+          <div class="input-clear" id="leader-clear">C</div><br>
+          <div class="select-leader-box"></div>
+
+          <%= text_field_tag 'friend', nil, class: 'input-friend', maxlength: "32", placeholder: 'フレンド', value: if session[:friend] != "avatar" then session[:friend] else "" end %>
+          <div class="input-clear" id="friend-clear">C</div><br>
+          <div class="select-friend-box"></div>
+
+          <%= text_field_tag 'sub1', nil, class: 'input-sub1', maxlength: "32", placeholder: 'サブ', value: if session[:sub1] != "avatar" then session[:sub1] else "" end %>
+          <div class="input-clear" id="sub1-clear">C</div><br>
+          <div class="select-sub1-box"></div>
+
+          <%= text_field_tag 'sub2', nil, class: 'input-sub2', maxlength: "32", placeholder: 'サブ', value: if session[:sub2] != "avatar" then session[:sub2] else "" end %>
+          <div class="input-clear" id="sub2-clear">C</div><br>
+          <div class="select-sub2-box"></div>
+
+          <%= text_field_tag 'sub3', nil, class: 'input-sub3', maxlength: "32", placeholder: 'サブ', value: if session[:sub3] != "avatar" then session[:sub3] else "" end %>
+          <div class="input-clear" id="sub3-clear">C</div><br>
+          <div class="select-sub3-box"></div>
+
+          <%= text_field_tag 'sub4', nil, class: 'input-sub4', maxlength: "32", placeholder: 'サブ', value: if session[:sub4] != "avatar" then session[:sub4] else "" end %>
+          <div class="input-clear" id="sub4-clear">C</div><br>
+          <div class="select-sub4-box"></div>
+        </div>
+
+        <div class="selected-monster">
+          <%= image_tag("monsters/#{session[:leader]}.png", :class => "selected-leader-image") %>
+          <%= image_tag("monsters/#{session[:sub1]}.png", :class => "selected-sub1-image") %>
+          <%= image_tag("monsters/#{session[:sub2]}.png", :class => "selected-sub2-image") %>
+          <%= image_tag("monsters/#{session[:sub3]}.png", :class => "selected-sub3-image") %>
+          <%= image_tag("monsters/#{session[:sub4]}.png", :class => "selected-sub4-image") %>
+          <%= image_tag("monsters/#{session[:friend]}.png", :class => "selected-friend-image") %>
+        </div>
+
+        <div class="input-detail">
+          <%= text_area_tag 'comment', nil, class: 'input-comment', maxlength: "640", placeholder: "攻略法を解説", value: session[:comment] %>
+          <%= text_field_tag 'user_name', nil, class: 'input-name', maxlength: "32", placeholder: 'あなたのお名前', value: session[:user_name] %>
+          <%= submit_tag "投稿", class: "submit" %>
+        </div>
+
+      </div>
+    <% end %>
+  </div>
+
+</div>
