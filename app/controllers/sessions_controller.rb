@@ -1,5 +1,7 @@
 class SessionsController < ApplicationController
   def new
+    puts session[:d_id]
+    session[:d_id] = params[:d_id] if params[:d_id]
     session[:leader] = params[:name] if params[:role] == "leader"
     session[:sub1] = params[:name] if params[:role] == "sub1"
     session[:sub2] = params[:name] if params[:role] == "sub2"

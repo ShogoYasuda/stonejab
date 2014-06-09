@@ -94,51 +94,51 @@ var monsters = [
     $.get('/sessions/clear', { clear: $(this).attr('id') },function(){location.reload()});
   })
 
-  if ($('#dungeon_1').attr('checked') === "checked") {
+  if ($('#d1').attr('checked') === "checked") {
     $('#d1').css('opacity', '.2').css('border', '5px solid #000');
-  } else if ($('#dungeon_2').attr('checked') === "checked") {
+  } else if ($('#id_2').attr('checked') === "checked") {
     $('#d2').css('opacity', '.2').css('border', '5px solid #000');
-  } else if ($('#dungeon_3').attr('checked') === "checked") {
+  } else if ($('#id_3').attr('checked') === "checked") {
     $('#d3').css('opacity', '.2').css('border', '5px solid #000');
-  } else if ($('#dungeon_4').attr('checked') === "checked") {
+  } else if ($('#id_4').attr('checked') === "checked") {
     $('#d4').css('opacity', '.2').css('border', '5px solid #000');
-  } else if ($('#dungeon_5').attr('checked') === "checked") {
+  } else if ($('#id_5').attr('checked') === "checked") {
     $('#d5').css('opacity', '.2').css('border', '5px solid #000');
-  } else if ($('#dungeon_6').attr('checked') === "checked") {
+  } else if ($('#id_6').attr('checked') === "checked") {
     $('#d6').css('opacity', '.2').css('border', '5px solid #000');
-  } else if ($('#dungeon_7').attr('checked') === "checked") {
+  } else if ($('#id_7').attr('checked') === "checked") {
     $('#d7').css('opacity', '.2').css('border', '5px solid #000');
-  } else if ($('#dungeon_8').attr('checked') === "checked") {
+  } else if ($('#id_8').attr('checked') === "checked") {
     $('#d8').css('opacity', '.2').css('border', '5px solid #000');
-  } else if ($('#dungeon_9').attr('checked') === "checked") {
+  } else if ($('#id_9').attr('checked') === "checked") {
     $('#d9').css('opacity', '.2').css('border', '5px solid #000');
-  } else if ($('#dungeon_10').attr('checked') === "checked") {
+  } else if ($('#id_10').attr('checked') === "checked") {
     $('#d10').css('opacity', '.2').css('border', '5px solid #000');
-  } else if ($('#dungeon_11').attr('checked') === "checked") {
+  } else if ($('#id_11').attr('checked') === "checked") {
     $('#d11').css('opacity', '.2').css('border', '5px solid #000');
-  } else if ($('#dungeon_12').attr('checked') === "checked") {
+  } else if ($('#id_12').attr('checked') === "checked") {
     $('#d12').css('opacity', '.2').css('border', '5px solid #000');
-  } else if ($('#dungeon_13').attr('checked') === "checked") {
+  } else if ($('#id_13').attr('checked') === "checked") {
     $('#d13').css('opacity', '.2').css('border', '5px solid #000');
-  } else if ($('#dungeon_14').attr('checked') === "checked") {
+  } else if ($('#id_14').attr('checked') === "checked") {
     $('#d14').css('opacity', '.2').css('border', '5px solid #000');
-  } else if ($('#dungeon_15').attr('checked') === "checked") {
+  } else if ($('#id_15').attr('checked') === "checked") {
     $('#d15').css('opacity', '.2').css('border', '5px solid #000');
-  } else if ($('#dungeon_16').attr('checked') === "checked") {
+  } else if ($('#id_16').attr('checked') === "checked") {
     $('#d16').css('opacity', '.2').css('border', '5px solid #000');
-  } else if ($('#dungeon_17').attr('checked') === "checked") {
+  } else if ($('#id_17').attr('checked') === "checked") {
     $('#d17').css('opacity', '.2').css('border', '5px solid #000');
-  } else if ($('#dungeon_18').attr('checked') === "checked") {
+  } else if ($('#id_18').attr('checked') === "checked") {
     $('#d18').css('opacity', '.2').css('border', '5px solid #000');
-  } else if ($('#dungeon_19').attr('checked') === "checked") {
+  } else if ($('#id_19').attr('checked') === "checked") {
     $('#d19').css('opacity', '.2').css('border', '5px solid #000');
-  } else if ($('#dungeon_20').attr('checked') === "checked") {
+  } else if ($('#id_20').attr('checked') === "checked") {
     $('#d20').css('opacity', '.2').css('border', '5px solid #000');
-  } else if ($('#dungeon_21').attr('checked') === "checked") {
+  } else if ($('#id_21').attr('checked') === "checked") {
     $('#d21').css('opacity', '.2').css('border', '5px solid #000');
-  } else if ($('#dungeon_22').attr('checked') === "checked") {
+  } else if ($('#id_22').attr('checked') === "checked") {
     $('#d22').css('opacity', '.2').css('border', '5px solid #000');
-  } else if ($('#dungeon_23').attr('checked') === "checked") {
+  } else if ($('#id_23').attr('checked') === "checked") {
     $('#d23').css('opacity', '.2').css('border', '5px solid #000');
   }
 
@@ -165,7 +165,7 @@ var monsters = [
     $('#d21').css('opacity', '1').css('border', '1px solid #ccc');
     $('#d22').css('opacity', '1').css('border', '1px solid #ccc');
     $('#d23').css('opacity', '1').css('border', '1px solid #ccc');
-    $.get('/dungeons/new', { dungeon: $(this).attr('id') },function(){});
+    $.get('/sessions/new', { d_id: $(this).attr('id') },function(){});
     $("#"+$(this).attr('id')).css('opacity', '.2').css('border', '5px solid #000');
   })
 

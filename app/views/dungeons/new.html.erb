@@ -7,7 +7,7 @@
       <div class="dungeon-list">
 
         <% for i in 1..@advent %>
-          <%= radio_button_tag 'id', "#{i}", if session[:dungeon] == "d#{i}" then true else false end, class: "dungeon-btn" %>
+          <%= radio_button_tag 'id', "#{i}", if session[:d_id] == "d#{i}" then true else false end, class: "dungeon-btn" %>
           <label for="dungeon_<%= i %>" class="dungeon" id="d<%= i %>"></label>
         <% end %>
 

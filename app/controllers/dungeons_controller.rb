@@ -3,9 +3,7 @@ class DungeonsController < ApplicationController
   end
 
   def new
-
-    session[:dungeon] = params[:dungeon] if params[:dungeon]
-
+puts session[:d_id]
     session[:leader] = "avatar"  unless session[:leader]
     session[:sub1]   = "avatar"  unless session[:sub1]
     session[:sub2]   = "avatar"  unless session[:sub2]
@@ -57,7 +55,7 @@ class DungeonsController < ApplicationController
       c.save
     end
 
-    redirect_to "/dungeons/#{params[:d_id]}"
+    redirect_to "/dungeons/#{params[:id]}"
   end
 
   def update
