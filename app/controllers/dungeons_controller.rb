@@ -3,7 +3,6 @@ class DungeonsController < ApplicationController
   end
 
   def new
-puts session[:d_id]
     session[:leader] = "avatar"  unless session[:leader]
     session[:sub1]   = "avatar"  unless session[:sub1]
     session[:sub2]   = "avatar"  unless session[:sub2]
@@ -43,7 +42,7 @@ puts session[:d_id]
 
     Dungeon.new do |c|
       c.d_id = params[:id]
-      c.kind = "advent"
+      c.kind = "A"
       c.leader = params[:leader]
       c.friend = params[:friend]
       c.sub1 = params[:sub1]
@@ -52,6 +51,7 @@ puts session[:d_id]
       c.sub4 = params[:sub4]
       c.comment = params[:comment]
       c.user_name = params[:user_name]
+      c.like = 0
       c.save
     end
 

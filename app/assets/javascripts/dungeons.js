@@ -151,6 +151,7 @@ var monsters = [
     $('#d6').css('opacity', '1').css('border', '1px solid #ccc');
     $('#d7').css('opacity', '1').css('border', '1px solid #ccc');
     $('#d8').css('opacity', '1').css('border', '1px solid #ccc');
+    $('#d9').css('opacity', '1').css('border', '1px solid #ccc');
     $('#d10').css('opacity', '1').css('border', '1px solid #ccc');
     $('#d11').css('opacity', '1').css('border', '1px solid #ccc');
     $('#d12').css('opacity', '1').css('border', '1px solid #ccc');
