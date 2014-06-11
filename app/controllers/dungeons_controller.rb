@@ -43,7 +43,7 @@ class DungeonsController < ApplicationController
     Dungeon.new do |c|
       c.d_id = params[:id]
       c.kind = "A"
-      c.leader = params[:leader]
+      c.leader = nil
       c.friend = params[:friend]
       c.sub1 = params[:sub1]
       c.sub2 = params[:sub2]
@@ -51,11 +51,14 @@ class DungeonsController < ApplicationController
       c.sub4 = params[:sub4]
       c.comment = params[:comment]
       c.user_name = params[:user_name]
-      c.like = 0
+      c.like = "ge"
       c.save
+      @Dungeon = c.errors.messages
     end
+    puts @Dungeon
 
-    redirect_to "/dungeons/#{params[:id]}"
+    render :action => "new", :locals => { :@advent => 23, :@Dungeon => @Dungeon}
+    #redirect_to "/dungeons/#{params[:id]}"
   end
 
   def update
