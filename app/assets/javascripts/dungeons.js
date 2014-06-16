@@ -1404,7 +1404,7 @@ var monsters = [
   $('#friend-clear').click(function() {
     $('.input-friend').val('')
     $('.selected-friend-image').remove()
-    $('.selected-monster').append("<img src='/assets/monsters/avatar.png' class='selected-friend-image'>")
+    $('.selected-monster').append("<img src='/assets/monsters/avatar-c30368cc04dc2bb41b991c5b6f1cb47f.png' class='selected-friend-image'>")
   })
 
   $('.dungeon').click(function() {
@@ -1457,7 +1457,7 @@ var monsters = [
 
   $('.dungeon-form').submit(function() {
 
-    if ($('input[name="dungeon"]:checked').val() === undefined) {
+    if ($('input[name="id"]:checked').val() === undefined) {
       $('.select-dungeon-error').css('display', 'block');
     } else {
       $('.select-dungeon-error').css('display', 'none');
