@@ -1,3 +1,7 @@
+h2 {
+  margin: 10px 0 10px 0;
+}
+
 .show-wrapper {
   width: 960px;
   min-height: 540px;
@@ -101,7 +105,7 @@
     .dungeon-list {
 
       .dungeon-btn {
-        display: none;
+        //display: none;
       }
 
       .dungeon {
@@ -377,7 +381,7 @@
         float: left;
         width: 500px;
         height: 110px;
-        padding-top: 5px;
+        padding-top: 2px;
 
         .input-comment {
           resize: none;

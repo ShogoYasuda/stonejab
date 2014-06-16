@@ -2,30 +2,34 @@
 
   <div class="show-main">
 
-    <% @guide.each do |row| %>
-      <div class="guide">
+    <% if @no_exist %>
+      <h2>※<%= @no_exist %></h2>
+    <% else %>
+      <% @guide.each do |row| %>
+        <div class="guide">
 
-        <%= image_tag("monsters/#{row.leader}.png", :class => "lf") %>
-        <%= image_tag("monsters/#{row.sub1}.png", :class => "sub") %>
-        <%= image_tag("monsters/#{row.sub2}.png", :class => "sub") %>
-        <%= image_tag("monsters/#{row.sub3}.png", :class => "sub") %>
-        <%= image_tag("monsters/#{row.sub4}.png", :class => "sub") %>
-        <%= image_tag("monsters/#{row.friend}.png", :class => "lf") %>
-        <pre class="comment"><%= row.comment %></pre>
-        <div class="user-name"><%= row.user_name %></div>
+          <%= image_tag("monsters/#{row.leader}.png", :class => "lf") %>
+          <%= image_tag("monsters/#{row.sub1}.png", :class => "sub") %>
+          <%= image_tag("monsters/#{row.sub2}.png", :class => "sub") %>
+          <%= image_tag("monsters/#{row.sub3}.png", :class => "sub") %>
+          <%= image_tag("monsters/#{row.sub4}.png", :class => "sub") %>
+          <%= image_tag("monsters/#{row.friend}.png", :class => "lf") %>
+          <pre class="comment"><%= row.comment %></pre>
+          <div class="user-name"><%= row.user_name %></div>
 
-      </div>
+        </div>
+      <% end %>
     <% end %>
 
     <div class="page">
 
       <% if @p != 1 %>
-        <a href="/dungeons/<%= @dungeon %>?p=<%= @p-1 %>"><div class="prev" %>Prev</div></a>
+        <a href="/dungeons/<%= @d_id %>?p=<%= @p-1 %>"><div class="prev" %>Prev</div></a>
       <% end %>
 
       <% if @page < 10 %>
         <% for p in 1..@page %>
-        <a href="/dungeons/<%= @dungeon %>?p=<%= p %>"><div class="p" <%= id = "id=selected" if @p == p  %>><%= p %></div></a>
+        <a href="/dungeons/<%= @d_id %>?p=<%= p %>"><div class="p" <%= id = "id=selected" if @p == p  %>><%= p %></div></a>
         <% end %>
       <% else %>
         <% for p in @p..@p+9 %>
@@ -33,8 +37,8 @@
         <% end %>
       <% end %>
 
-      <% if @p != @page && @page > 1 %>
-        <a href="/dungeons/<%= @dungeon %>?p=<%= @p+1 %>"><div class="next" %>Next</div></a>
+      <% if @p >= 1 && @page != @p && @no_exist.nil? %>
+        <a href="/dungeons/<%= @d_id %>?p=<%= @p+1 %>"><div class="next" %>Next</div></a>
       <% end %>
 
     </div>
