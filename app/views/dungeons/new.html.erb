@@ -6,11 +6,16 @@
       <h2>ダンジョン選択</h2>
       <div class="dungeon-list">
 
+        <% @advent = 24 %>
         <% for i in 1..@advent %>
           <%= radio_button_tag 'id', "#{i}", false, class: "dungeon-btn" %>
           <label for="id_<%= i %>" class="dungeon" id="d<%= i %>"></label>
         <% end %>
 
+      </div>
+
+      <div class="enemy-box">
+        <table></table>
       </div>
 
       <div class="select-dungeon-error">※ダンジョンを選択してください</div>

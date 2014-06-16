@@ -3,16 +3,22 @@ class DungeonsController < ApplicationController
   end
 
   def new
-    @advent = 24
+
+
+    if params[:d_id]
+      enemies = []
+      id = params[:d_id].delete('d')
+      CSV.foreach("app/assets/csv/#{id}.csv") do |row|
+        enemies.push(row)
+      end
+      render json: enemies
+    end
   end
 
   def show
 
     @d_id = params[:id].to_i
     @p = if params[:p] then params[:p].to_i else 1 end
-
-    puts "----"
-    puts @p
 
     if @p == 1
       last = Dungeon.where("d_id = #{@d_id}").last
@@ -30,7 +36,6 @@ class DungeonsController < ApplicationController
 
     all = Dungeon.where("d_id = #{@d_id}")
     @page = if all.count / 5 == 0 then all.count / 5 else all.count / 5  + 1 end
-    puts @page
 
     if (@guide.blank?)
       @guide = []

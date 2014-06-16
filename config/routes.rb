@@ -3,10 +3,10 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   resources :dungeons, :except => [:edit, :update, :destroy]
-  post '/dungeons/like' => 'dungeons#update'
+  #post '/dungeons/like' => 'dungeons#update'
 
-  resources :sessions, :except => [:show, :edit, :update, :destroy]
-  get '/sessions/clear' => 'sessions#clear'
+  #resources :sessions, :except => [:show, :edit, :update, :destroy]
+  #get '/sessions/clear' => 'sessions#clear'
 
 
   # The priority is based upon order of creation: first created -> highest priority.

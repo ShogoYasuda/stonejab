@@ -1407,56 +1407,6 @@ var monsters = [
     $('.selected-monster').append("<img src='/assets/monsters/avatar.png' class='selected-friend-image'>")
   })
 
-  if ($('#d1').attr('checked') === "checked") {
-    $('#d1').css('opacity', '.2');
-  } else if ($('#id_2').attr('checked') === "checked") {
-    $('#d2').css('opacity', '.2');
-  } else if ($('#id_3').attr('checked') === "checked") {
-    $('#d3').css('opacity', '.2');
-  } else if ($('#id_4').attr('checked') === "checked") {
-    $('#d4').css('opacity', '.2');
-  } else if ($('#id_5').attr('checked') === "checked") {
-    $('#d5').css('opacity', '.2');
-  } else if ($('#id_6').attr('checked') === "checked") {
-    $('#d6').css('opacity', '.2');
-  } else if ($('#id_7').attr('checked') === "checked") {
-    $('#d7').css('opacity', '.2');
-  } else if ($('#id_8').attr('checked') === "checked") {
-    $('#d8').css('opacity', '.2');
-  } else if ($('#id_9').attr('checked') === "checked") {
-    $('#d9').css('opacity', '.2');
-  } else if ($('#id_10').attr('checked') === "checked") {
-    $('#d10').css('opacity', '.2');
-  } else if ($('#id_11').attr('checked') === "checked") {
-    $('#d11').css('opacity', '.2');
-  } else if ($('#id_12').attr('checked') === "checked") {
-    $('#d12').css('opacity', '.2');
-  } else if ($('#id_13').attr('checked') === "checked") {
-    $('#d13').css('opacity', '.2');
-  } else if ($('#id_14').attr('checked') === "checked") {
-    $('#d14').css('opacity', '.2');
-  } else if ($('#id_15').attr('checked') === "checked") {
-    $('#d15').css('opacity', '.2');
-  } else if ($('#id_16').attr('checked') === "checked") {
-    $('#d16').css('opacity', '.2');
-  } else if ($('#id_17').attr('checked') === "checked") {
-    $('#d17').css('opacity', '.2');
-  } else if ($('#id_18').attr('checked') === "checked") {
-    $('#d18').css('opacity', '.2');
-  } else if ($('#id_19').attr('checked') === "checked") {
-    $('#d19').css('opacity', '.2');
-  } else if ($('#id_20').attr('checked') === "checked") {
-    $('#d20').css('opacity', '.2');
-  } else if ($('#id_21').attr('checked') === "checked") {
-    $('#d21').css('opacity', '.2');
-  } else if ($('#id_22').attr('checked') === "checked") {
-    $('#d22').css('opacity', '.2');
-  } else if ($('#id_23').attr('checked') === "checked") {
-    $('#d23').css('opacity', '.2');
-  } else if ($('#id_24').attr('checked') === "checked") {
-    $('#d24').css('opacity', '.2');
-  }
-
   $('.dungeon').click(function() {
     $('#d1').css('opacity', '1').css('border', '1px solid #ccc');
     $('#d2').css('opacity', '1').css('border', '1px solid #ccc');
@@ -1482,8 +1432,23 @@ var monsters = [
     $('#d22').css('opacity', '1').css('border', '1px solid #ccc');
     $('#d23').css('opacity', '1').css('border', '1px solid #ccc');
     $('#d24').css('opacity', '1').css('border', '1px solid #ccc');
-    $.get('/sessions/new', { d_id: $(this).attr('id') },function(){});
     $("#"+$(this).attr('id')).css('opacity', '.2');
+  })
+
+  $('.dungeon').click(function() {
+    $.get('/dungeons/new', { d_id: $(this).attr('id') }, function(data) {
+      $('table').text("")
+      $('table').append("<tr><td>フロア</td><td></td><td>モンスター名</td><td>属性</td><td>攻撃</td><td>ターン</td><td>HP</td><td>防御</td><td>スキルなど</td></tr>")
+      for (var i = 0, len = data.length; i < len; i++) {
+        if (data[i][1] == "-") {
+          data[i][1] = "-"
+        } else {
+          data[i][1] = "<img class='enemy' src='/assets/monsters/"+data[i][1]+"'>"
+        }
+        $('table').append("><tr><td>"+data[i][0]+"</td><td>"+data[i][1]+"</td><td>"+data[i][2]+"</td><td>"+data[i][3]+"</td><td>"+data[i][4]+"</td><td>"+data[i][5]+"</td><td>"+data[i][6]+"</td><td>"+data[i][7]+"</td><td>"+data[i][8]+"</td></tr>")
+        $('.enemy-box').css('display', 'block')
+      }
+    })
   })
 
   $("input:not(.allow_submit)").on("keypress", function(event){

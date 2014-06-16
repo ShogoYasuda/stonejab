@@ -192,6 +192,93 @@ h2 {
       }
     }
 
+    .enemy-box {
+      width: 820px;
+      display: none;
+      margin: 50px 0 50px 0;
+
+      table {
+        border-collapse: collapse;
+        tbody {
+
+          tr:nth-child(1) > td:nth-child(3) {
+            color: #fff;
+            background-color: #3498db;
+          }
+          tr:nth-child(1) > td:nth-child(4) {
+            color: #fff;
+            background-color: #9b59b6;
+          }
+          tr:nth-child(1) > td:nth-child(5) {
+            color: #fff;
+            background-color: #e74c3c;
+          }
+          tr:nth-child(1) > td:nth-child(6) {
+            color: #fff;
+            background-color: #f1c40f;
+          }
+          tr:nth-child(1) > td:nth-child(7) {
+            color: #fff;
+            background-color: #f17288;
+          }
+          tr:nth-child(1) > td:nth-child(8) {
+            color: #fff;
+            background-color: #1abc9c;
+          }
+          tr:nth-child(1) > td:nth-child(9) {
+            color: #fff;
+            background-color: #e67e22;
+          }
+          tr {
+            td {
+              font-size: 13px;
+            }
+            td:nth-child(1) {
+              width: 60px;
+            }
+            td:nth-child(3) {
+              color: #3498db;
+              width: 130px;
+            }
+            td:nth-child(4) {
+              color: #9b59b6;
+              width: 50px;
+            }
+            td:nth-child(5) {
+              color: #e74c3c;
+            }
+            td:nth-child(6) {
+              color: #f1c40f;
+              width: 60px;
+            }
+            td:nth-child(7) {
+              color: #f17288;
+            }
+            td:nth-child(8) {
+              color: #1abc9c;
+            }
+            td:nth-child(9) {
+              color: #e67e22;
+            }
+
+            td {
+              border: 1px solid #CCC;
+              padding: 0 5px 0 5px;
+              text-align: center;
+
+              .enemy {
+                width: 40px;
+                height: 40px;
+                margin: 2px 0 -5px 0;
+                border-radius: 2px;
+              }
+            }
+          }
+        }
+      }
+
+    }
+
     .select-dungeon-error {
       color: #e74c3c;
       display: none;
