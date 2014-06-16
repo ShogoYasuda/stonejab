@@ -21,7 +21,6 @@
         <div class="input-monster-box">
           <%= text_field_tag 'leader', nil, class: 'input-leader', maxlength: "32", placeholder: 'リーダー', value: if session[:leader] != "avatar" then session[:leader] else "" end %>
           <div class="input-clear" id="leader-clear">C</div><br>
-          <%= @Dungeon[:leader][0] if @Dungeon[:leader] %>
           <div class="select-leader-box"></div>
 
           <%= text_field_tag 'friend', nil, class: 'input-friend', maxlength: "32", placeholder: 'フレンド', value: if session[:friend] != "avatar" then session[:friend] else "" end %>
