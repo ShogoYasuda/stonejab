@@ -105,7 +105,7 @@ h2 {
     .dungeon-list {
 
       .dungeon-btn {
-        //display: none;
+        display: none;
       }
 
       .dungeon {
@@ -186,6 +186,9 @@ h2 {
       }
       #d23 {
         background-image: image-url('dungeons/23.png');
+      }
+      #d24 {
+        background-image: image-url('dungeons/24.png');
       }
     }
 

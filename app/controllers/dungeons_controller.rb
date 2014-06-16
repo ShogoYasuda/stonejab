@@ -3,7 +3,7 @@ class DungeonsController < ApplicationController
   end
 
   def new
-    @advent = 23
+    @advent = 24
   end
 
   def show

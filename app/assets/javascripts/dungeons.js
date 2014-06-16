@@ -1362,7 +1362,6 @@ var monsters = [
             $('.input-'+ role).val(monsters[$(this).attr('id')]);
             $('.select-'+ role +'-box').css('display', 'none');
             $('.selected-'+ role +'-image').remove();
-            //$.get('/sessions/new', { role: role, name: monsters[$(this).attr('id')] },function(){location.reload()});
             $('.selected-monster').append("<img src='/assets/monsters/"+renamed_monsters[get_index(monsters[$(this).attr('id')])]+"' class='selected-"+ role +"-image'>");
           });
         };
@@ -1377,8 +1376,35 @@ var monsters = [
   select_party("sub3");
   select_party("sub4");
 
-  $('.input-clear').click(function() {
-    $.get('/sessions/clear', { clear: $(this).attr('id') },function(){location.reload()});
+  $('#leader-clear').click(function() {
+    $('.input-leader').val('')
+    $('.selected-leader-image').remove()
+    $('.selected-monster').append("<img src='/assets/monsters/avatar.png' class='selected-leader-image'>")
+  })
+  $('#sub1-clear').click(function() {
+    $('.input-sub1').val('')
+    $('.selected-sub1-image').remove()
+    $('.selected-monster').append("<img src='/assets/monsters/avatar.png' class='selected-sub1-image'>")
+  })
+  $('#sub2-clear').click(function() {
+    $('.input-sub2').val('')
+    $('.selected-sub2-image').remove()
+    $('.selected-monster').append("<img src='/assets/monsters/avatar.png' class='selected-sub2-image'>")
+  })
+  $('#sub3-clear').click(function() {
+    $('.input-sub3').val('')
+    $('.selected-sub3-image').remove()
+    $('.selected-monster').append("<img src='/assets/monsters/avatar.png' class='selected-sub3-image'>")
+  })
+  $('#sub4-clear').click(function() {
+    $('.input-sub4').val('')
+    $('.selected-sub4-image').remove()
+    $('.selected-monster').append("<img src='/assets/monsters/avatar.png' class='selected-sub4-image'>")
+  })
+  $('#friend-clear').click(function() {
+    $('.input-friend').val('')
+    $('.selected-friend-image').remove()
+    $('.selected-monster').append("<img src='/assets/monsters/avatar.png' class='selected-friend-image'>")
   })
 
   if ($('#d1').attr('checked') === "checked") {
@@ -1427,6 +1453,8 @@ var monsters = [
     $('#d22').css('opacity', '.2');
   } else if ($('#id_23').attr('checked') === "checked") {
     $('#d23').css('opacity', '.2');
+  } else if ($('#id_24').attr('checked') === "checked") {
+    $('#d24').css('opacity', '.2');
   }
 
   $('.dungeon').click(function() {
@@ -1453,6 +1481,7 @@ var monsters = [
     $('#d21').css('opacity', '1').css('border', '1px solid #ccc');
     $('#d22').css('opacity', '1').css('border', '1px solid #ccc');
     $('#d23').css('opacity', '1').css('border', '1px solid #ccc');
+    $('#d24').css('opacity', '1').css('border', '1px solid #ccc');
     $.get('/sessions/new', { d_id: $(this).attr('id') },function(){});
     $("#"+$(this).attr('id')).css('opacity', '.2');
   })

@@ -19,27 +19,27 @@
         <h2>パーティーモンスター選択</h2>
 
         <div class="input-monster-box">
-          <%= text_field_tag 'leader', nil, class: 'input-leader', maxlength: "32", placeholder: 'リーダー', value: if session[:leader] != "avatar" then session[:leader] else "" end %>
+          <%= text_field_tag 'leader', nil, class: 'input-leader', maxlength: "32", placeholder: 'リーダー' %>
           <div class="input-clear" id="leader-clear">C</div><br>
           <div class="select-leader-box"></div>
 
-          <%= text_field_tag 'friend', nil, class: 'input-friend', maxlength: "32", placeholder: 'フレンド', value: if session[:friend] != "avatar" then session[:friend] else "" end %>
+          <%= text_field_tag 'friend', nil, class: 'input-friend', maxlength: "32", placeholder: 'フレンド' %>
           <div class="input-clear" id="friend-clear">C</div><br>
           <div class="select-friend-box"></div>
 
-          <%= text_field_tag 'sub1', nil, class: 'input-sub1', maxlength: "32", placeholder: 'サブ', value: if session[:sub1] != "avatar" then session[:sub1] else "" end %>
+          <%= text_field_tag 'sub1', nil, class: 'input-sub1', maxlength: "32", placeholder: 'サブ' %>
           <div class="input-clear" id="sub1-clear">C</div><br>
           <div class="select-sub1-box"></div>
 
-          <%= text_field_tag 'sub2', nil, class: 'input-sub2', maxlength: "32", placeholder: 'サブ', value: if session[:sub2] != "avatar" then session[:sub2] else "" end %>
+          <%= text_field_tag 'sub2', nil, class: 'input-sub2', maxlength: "32", placeholder: 'サブ' %>
           <div class="input-clear" id="sub2-clear">C</div><br>
           <div class="select-sub2-box"></div>
 
-          <%= text_field_tag 'sub3', nil, class: 'input-sub3', maxlength: "32", placeholder: 'サブ', value: if session[:sub3] != "avatar" then session[:sub3] else "" end %>
+          <%= text_field_tag 'sub3', nil, class: 'input-sub3', maxlength: "32", placeholder: 'サブ' %>
           <div class="input-clear" id="sub3-clear">C</div><br>
           <div class="select-sub3-box"></div>
 
-          <%= text_field_tag 'sub4', nil, class: 'input-sub4', maxlength: "32", placeholder: 'サブ', value: if session[:sub4] != "avatar" then session[:sub4] else "" end %>
+          <%= text_field_tag 'sub4', nil, class: 'input-sub4', maxlength: "32", placeholder: 'サブ' %>
           <div class="input-clear" id="sub4-clear">C</div><br>
           <div class="select-sub4-box"></div>
         </div>
