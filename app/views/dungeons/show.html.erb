@@ -23,9 +23,7 @@
 
     <div class="page">
 
-      <% if @p != 1 %>
-        <a href="/dungeons/<%= @d_id %>?p=<%= @p-1 %>"><div class="prev" %>Prev</div></a>
-      <% end %>
+        <!--<a href="/dungeons/<%= @d_id %>?p=<%= @p-1 %>"><div class="prev" %>Prev</div></a>-->
 
       <% if @page < 10 %>
         <% for p in 1..@page %>
@@ -37,9 +35,7 @@
         <% end %>
       <% end %>
 
-      <% if @p >= 1 && @page != @p && @no_exist.nil? %>
-        <a href="/dungeons/<%= @d_id %>?p=<%= @p+1 %>"><div class="next" %>Next</div></a>
-      <% end %>
+        <!--<a href="/dungeons/<%= @d_id %>?p=<%= @p+1 %>"><div class="next" %>Next</div></a>-->
 
     </div>
   </div>
