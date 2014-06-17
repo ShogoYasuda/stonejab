@@ -1451,6 +1451,30 @@ var monsters = [
     })
   })
 
+  $('.show-btn').click(function() {
+    $.get('/dungeons/new', { d_id: location.pathname.split('/')[2] }, function(data) {
+      $('table').text("")
+      $('table').append("<tr><td>フロア</td><td></td><td>モンスター名</td><td>属性</td><td>攻撃</td><td>ターン</td><td>HP</td><td>防御</td><td>スキルなど</td></tr>")
+      for (var i = 0, len = data.length; i < len; i++) {
+        if (data[i][1] == "-") {
+          data[i][1] = "-"
+        } else {
+          data[i][1] = "<img class='enemy' src='/assets/monsters/"+data[i][1]+"'>"
+        }
+        $('table').append("><tr><td>"+data[i][0]+"</td><td>"+data[i][1]+"</td><td>"+data[i][2]+"</td><td>"+data[i][3]+"</td><td>"+data[i][4]+"</td><td>"+data[i][5]+"</td><td>"+data[i][6]+"</td><td>"+data[i][7]+"</td><td>"+data[i][8]+"</td></tr>")
+        $('.enemy-box').css('display', 'block')
+        $('.show-btn').css('display', 'none')
+        $('.hide-btn').css('display', 'inline-block')
+      }
+    })
+  })
+
+  $('.hide-btn').click(function() {
+    $('.enemy-box').css('display', 'none')
+    $('.hide-btn').css('display', 'none')
+    $('.show-btn').css('display', 'inline-block')
+  })
+
   $("input:not(.allow_submit)").on("keypress", function(event){
     return event.which !== 13;
   });
