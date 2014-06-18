@@ -24,18 +24,25 @@ class DungeonsController < ApplicationController
       last = Dungeon.where("d_id = #{@d_id}").last
       if last.nil?
         @no_exist = "攻略PT情報が存在しません"
+      elsif params[:search] != nil
+        search_monster = params[:search]
+        @guide = Dungeon.where([
+          "d_id = ? AND id <= ? AND leader LIKE ? OR d_id = ? AND id <= ? AND sub1 LIKE ? OR d_id = ? AND id <= ? AND sub2 LIKE ? OR d_id = ? AND id <= ? AND sub3 LIKE ? OR d_id = ? AND id <= ? AND sub4 LIKE ? OR d_id = ? AND id <= ? AND friend LIKE ?",
+          @d_id,last.id,"%#{search_monster}%",@d_id,last.id, "%#{search_monster}%",@d_id,last.id, "%#{search_monster}%",@d_id,last.id, "%#{search_monster}%",@d_id,last.id, "%#{search_monster}%",@d_id,last.id, "%#{search_monster}%"])
+          .limit(10)
+          .order("id DESC")
       else
-        @guide = Dungeon.where("d_id = #{@d_id} AND id <= #{last.id}").limit(5).order("id DESC")
+        @guide = Dungeon.where("d_id = #{@d_id} AND id <= #{last.id}").limit(10).order("id DESC")
       end
     else
       last = Dungeon.where("d_id = #{@d_id}").last
-      guide = Dungeon.where("d_id = #{@d_id} AND id <= #{last.id}").limit(5).order("id DESC")
+      guide = Dungeon.where("d_id = #{@d_id} AND id <= #{last.id}").limit(10).order("id DESC")
       last_id = guide.last.id
-      @guide = Dungeon.where("d_id = #{@d_id} AND id <= #{last_id}").limit(5).order("id DESC")
+      @guide = Dungeon.where("d_id = #{@d_id} AND id <= #{last_id}").limit(10).order("id DESC")
     end
 
     all = Dungeon.where("d_id = #{@d_id}")
-    @page = if all.count / 5 == 0 then all.count / 5 else all.count / 5  + 1 end
+    @page = if all.count / 10 == 0 then all.count / 10 else all.count / 10  + 1 end
 
     if (@guide.blank?)
       @guide = []

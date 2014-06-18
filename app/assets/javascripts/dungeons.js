@@ -1479,6 +1479,10 @@ var monsters = [
     return event.which !== 13;
   });
 
+  $('.search-mosnter-form').on("keypress", function(event){
+    return true if event.which == 13
+  });
+
   $('.dungeon-form').submit(function() {
 
     if ($('input[name="id"]:checked').val() === undefined) {

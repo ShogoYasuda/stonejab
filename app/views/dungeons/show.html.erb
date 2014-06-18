@@ -3,7 +3,11 @@
   <div class="input-box">
     <button name="button" class="show-btn">ダンジョン情報を表示</button>
     <button name="button" class="hide-btn">ダンジョン情報を非表示</button>
-    <input type="text" name="" id="search-monster" placeholder="使用モンスターを検索"/>
+    <% pathname = request.path_info  %>
+    <%= form_tag("#{pathname}", method: :get, :class => "search-monster-form" ) do %>
+    <%= text_field_tag 'search', nil, id: 'search-monster', maxlength: "32", placeholder: '使用モンスターを検索' %>
+    <%= image_submit_tag "/assets/icon/search.png", id: "search-submit" %>
+    <% end %>
   </div>
   <div class="enemy-box">
     <table></table>
