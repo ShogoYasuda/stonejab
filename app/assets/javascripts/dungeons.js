@@ -1480,7 +1480,9 @@ var monsters = [
   });
 
   $('.search-mosnter-form').on("keypress", function(event){
-    return true if event.which == 13
+    if (event.which == 13) {
+      return true
+    }
   });
 
   $('.dungeon-form').submit(function() {
