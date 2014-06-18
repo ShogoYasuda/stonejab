@@ -1475,14 +1475,17 @@ var monsters = [
     $('.show-btn').css('display', 'inline-block')
   })
 
-  $("input:not(.allow_submit)").on("keypress", function(event){
-    return event.which !== 13;
-  });
-
-  $('.search-mosnter-form').on("keypress", function(event){
+  $('#search-monster').on("keypress", function(event){
     if (event.which == 13) {
       return true
     }
+  });
+
+  $("input:not(.allow_submit)").on("keypress", function(event){
+    if ($(this).attr('id') == "search-monster") {
+      return event.which == 13;
+    }
+    return event.which !== 13;
   });
 
   $('.dungeon-form').submit(function() {

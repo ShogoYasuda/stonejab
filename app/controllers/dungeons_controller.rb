@@ -4,7 +4,6 @@ class DungeonsController < ApplicationController
 
   def new
 
-
     if params[:d_id]
       enemies = []
       id = params[:d_id].delete('d')
@@ -38,7 +37,11 @@ class DungeonsController < ApplicationController
       last = Dungeon.where("d_id = #{@d_id}").last
       guide = Dungeon.where("d_id = #{@d_id} AND id <= #{last.id}").limit(10).order("id DESC")
       last_id = guide.last.id
-      @guide = Dungeon.where("d_id = #{@d_id} AND id <= #{last_id}").limit(10).order("id DESC")
+      @guide = Dungeon.where([
+        "d_id = ? AND id <= ? AND leader LIKE ? OR d_id = ? AND id <= ? AND sub1 LIKE ? OR d_id = ? AND id <= ? AND sub2 LIKE ? OR d_id = ? AND id <= ? AND sub3 LIKE ? OR d_id = ? AND id <= ? AND sub4 LIKE ? OR d_id = ? AND id <= ? AND friend LIKE ?",
+        @d_id,last.id,"%#{search_monster}%",@d_id,last.id, "%#{search_monster}%",@d_id,last.id, "%#{search_monster}%",@d_id,last.id, "%#{search_monster}%",@d_id,last.id, "%#{search_monster}%",@d_id,last.id, "%#{search_monster}%"])
+        .limit(10)
+        .order("id DESC")
     end
 
     all = Dungeon.where("d_id = #{@d_id}")
@@ -72,9 +75,7 @@ class DungeonsController < ApplicationController
         puts '失敗'
       end
     end
-    #puts @Dungeon
 
-    #render :action => "new", :locals => { :@advent => 23, :@Dungeon => @Dungeon}
     redirect_to "/dungeons/#{params[:id]}"
   end
 
