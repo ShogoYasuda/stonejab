@@ -39,14 +39,36 @@ a {
   display: inline-block;
   width: 250px;
 }
-
+nav {
+  margin-left: 585px;
+}
+.nav-list {
+  list-style-type: none;
+  display: inline-block;
+}
+.book {
+  color: #fff;
+  font-size: 14px;
+  float: left;
+  text-align: center;
+  width: 80px;
+  height: 40px;
+  margin: 10px;
+  padding-top: 10px;
+  background-color: #3498db;
+  border: none;
+  border-radius: 4px;
+  text-shadow: 1px 1px 1px #000;
+}
 .write {
   color: #fff;
   font-size: 14px;
   float: left;
+  text-align: center;
   width: 80px;
   height: 40px;
-  margin: 10px 0 0 490px;
+  margin: 10px;
+  padding-top: 10px;
   background-color: #3498db;
   border: none;
   border-radius: 4px;

@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   resources :dungeons, :except => [:edit, :update, :destroy]
+  resource :monsters
   #post '/dungeons/like' => 'dungeons#update'
 
   #resources :sessions, :except => [:show, :edit, :update, :destroy]

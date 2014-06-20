@@ -6,7 +6,7 @@
     <% pathname = request.path_info  %>
     <%= form_tag("#{pathname}", method: :get, :class => "search-monster-form" ) do %>
     <%= text_field_tag 'search', nil, id: 'search-monster', maxlength: "32", placeholder: '使用モンスターを検索' %>
-    <%= image_submit_tag "/assets/icon/search.png", id: "search-submit" %>
+    <%= image_submit_tag "icon/search.png", id: "search-submit" %>
     <% end %>
   </div>
   <div class="enemy-box">
