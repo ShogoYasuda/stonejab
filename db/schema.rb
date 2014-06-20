@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140607222803) do
+ActiveRecord::Schema.define(version: 20140620094101) do
 
   create_table "dungeons", force: true do |t|
     t.integer  "d_id"
@@ -25,6 +25,32 @@ ActiveRecord::Schema.define(version: 20140607222803) do
     t.text     "comment"
     t.string   "user_name"
     t.integer  "like"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "monsters", force: true do |t|
+    t.string   "name"
+    t.string   "element"
+    t.string   "sub_element"
+    t.string   "rare"
+    t.integer  "cost"
+    t.string   "type"
+    t.string   "sub_type"
+    t.integer  "hp"
+    t.integer  "atk"
+    t.integer  "head"
+    t.string   "skill"
+    t.string   "leader_skill"
+    t.string   "arousal"
+    t.string   "arousal2"
+    t.string   "arousal3"
+    t.string   "arousal4"
+    t.string   "arousal5"
+    t.string   "arousal6"
+    t.string   "arousal7"
+    t.string   "arousal8"
+    t.string   "arousal9"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
