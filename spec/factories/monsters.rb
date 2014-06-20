@@ -11,7 +11,7 @@ FactoryGirl.define do
     sub_type "MyString"
     hp 1
     atk 1
-    head 1
+    heal 1
     skill "MyString"
     leader_skill "MyString"
     arousal "MyString"

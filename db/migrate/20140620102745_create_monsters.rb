@@ -10,7 +10,7 @@ class CreateMonsters < ActiveRecord::Migration
       t.string :sub_type
       t.integer :hp
       t.integer :atk
-      t.integer :head
+      t.integer :heal
       t.string :skill
       t.string :leader_skill
       t.string :arousal

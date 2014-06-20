@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140620094101) do
+ActiveRecord::Schema.define(version: 20140620102745) do
 
   create_table "dungeons", force: true do |t|
     t.integer  "d_id"
@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 20140620094101) do
     t.string   "sub_type"
     t.integer  "hp"
     t.integer  "atk"
-    t.integer  "head"
+    t.integer  "heal"
     t.string   "skill"
     t.string   "leader_skill"
     t.string   "arousal"
