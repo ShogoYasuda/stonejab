@@ -1,3 +1,38 @@
+.wrapper-s {
+  width: 320px;
+  margin: 0 auto;
+
+  .header-s {
+    width: 100%;
+    text-align: center;
+
+    .site-title-s {
+      color: #2ecc71;
+      font-family: 'Galindo', cursive;
+      font-size: 36px;
+    }
+  }
+
+  .main {
+    width: 100%;
+    min-height: 480px;
+    text-align: center;
+
+    .dungeon-list {
+      margin-top: 50px;
+      padding: 0;
+      text-align: center;
+
+      li {
+        width: 300px;
+        list-style-type: none;
+        border: 1px solid #CCC;
+        padding: 5px;
+      }
+    }
+  }
+}
+
 .wrapper {
   width: 960px;
   min-height: 540px;
