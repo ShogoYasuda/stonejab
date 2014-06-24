@@ -1,5 +1,5 @@
 .wrapper-s {
-  width: 320px;
+  width: 100%;
   margin: 0 auto;
 
   .header-s {
@@ -16,18 +16,111 @@
   .main {
     width: 100%;
     min-height: 480px;
-    text-align: center;
+    margin: auto;
+
+    #select-dungeon {
+      width: 300px;
+      margin: auto;
+    }
 
     .dungeon-list {
-      margin-top: 50px;
+      width: 300px;
+      min-height: 480px;
+      margin: auto;
       padding: 0;
-      text-align: center;
 
       li {
-        width: 300px;
+        float: left;
+        width: 140px;
+        height: 70px;
         list-style-type: none;
         border: 1px solid #CCC;
+        margin: 5px;
         padding: 5px;
+        background-size: 140px;
+        background-repeat: no-repeat;
+      }
+      #d1 {
+        background-image: image-url('dungeons/1.png');
+      }
+      #d2 {
+        background-image: image-url('dungeons/2.png');
+      }
+      #d3 {
+        background-image: image-url('dungeons/3.png');
+      }
+      #d4 {
+        background-image: image-url('dungeons/4.png');
+      }
+      #d5 {
+        background-image: image-url('dungeons/5.png');
+      }
+      #d6 {
+        background-image: image-url('dungeons/6.png');
+      }
+      #d7 {
+        background-image: image-url('dungeons/7.png');
+      }
+      #d8 {
+        background-image: image-url('dungeons/8.png');
+      }
+      #d9 {
+        background-image: image-url('dungeons/9.png');
+      }
+      #d10 {
+        background-image: image-url('dungeons/10.png');
+      }
+      #d11 {
+        background-image: image-url('dungeons/11.png');
+      }
+      #d12 {
+        background-image: image-url('dungeons/12.png');
+      }
+      #d13 {
+        background-image: image-url('dungeons/13.png');
+      }
+      #d14 {
+        background-image: image-url('dungeons/14.png');
+      }
+      #d15 {
+        background-image: image-url('dungeons/15.png');
+      }
+      #d16 {
+        background-image: image-url('dungeons/16.png');
+      }
+      #d17 {
+        background-image: image-url('dungeons/17.png');
+      }
+      #d18 {
+        background-image: image-url('dungeons/18.png');
+      }
+      #d19 {
+        background-image: image-url('dungeons/19.png');
+      }
+      #d20 {
+        background-image: image-url('dungeons/20.png');
+      }
+      #d21 {
+        background-image: image-url('dungeons/21.png');
+      }
+      #d22 {
+        background-image: image-url('dungeons/22.png');
+      }
+      #d23 {
+        background-image: image-url('dungeons/23.png');
+      }
+      #d24 {
+        background-image: image-url('dungeons/24.png');
+      }
+    }
+    .footer-s {
+      width: 300px;
+      height: 30px;
+      margin: auto;
+      text-align: center;
+      .copyright-s {
+        font-size: 12px;
+        margin-top: 30px;
       }
     }
   }
