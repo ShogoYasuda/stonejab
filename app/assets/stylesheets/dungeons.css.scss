@@ -18,13 +18,14 @@ h2 {
   }
 
   .input-box {
-    min-width: 300px;
-    max-width: 310px;
+    max-width: 300px;
+    height: 30px;
     margin: 0 auto 10px;
 
     .search-monster-form {
-      display: inline-block;
+
       #search-monster {
+        float: left;
         font-size: 13px;
         width: 270px;
         height: 30px;
@@ -34,9 +35,9 @@ h2 {
         box-shadow:none;
       }
       #search-submit {
+        float: left;
         width: 30px;
         height: 30px;
-        margin: 0 0 -10px -5px;
         padding: 2px;
         border-top: 1px solid #CCC;
         border-right: 1px solid #CCC;
@@ -57,8 +58,8 @@ h2 {
     border-radius: 4px;
 
     .lf {
-      width: 47.5px;
-      height: 47.5px;
+      width: 45px;
+      height: 45px;
       border-radius: 4px;
     }
     .sub {
