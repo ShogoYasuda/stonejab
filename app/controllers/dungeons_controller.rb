@@ -51,6 +51,13 @@ class DungeonsController < ApplicationController
       @guide = []
     end
 
+    ua = request.env["HTTP_USER_AGENT"]
+    if(ua.include?('Mobile') || ua.include?('Android'))
+      render template: "dungeons/show_s"
+    else
+      render template: "dungeons/show"
+    end
+
   end
 
   def create
