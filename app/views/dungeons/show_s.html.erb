@@ -1,7 +1,15 @@
 <div class="show-wrapper-s">
 
   <div class="show-header-s">
-    <h1 class="site-title-s">StoneJab</h1>
+    <a href="/"><h1 class="site-title-s">StoneJab</h1></a>
+  </div>
+
+  <div class="input-box">
+    <% pathname = request.path_info  %>
+    <%= form_tag("#{pathname}", method: :get, :class => "search-monster-form" ) do %>
+    <%= text_field_tag 'search', nil, id: 'search-monster', maxlength: "32", placeholder: '使用モンスターを検索' %>
+    <%= image_submit_tag "icon/search.png", id: "search-submit" %>
+    <% end %>
   </div>
 
   <div class="main">
@@ -24,6 +32,24 @@
         </div>
       <% end %>
     <% end %>
+
+    <div class="page">
+
+        <!--<a href="/dungeons/<%= @d_id %>?p=<%= @p-1 %>"><div class="prev" %>Prev</div></a>-->
+
+      <% if @page < 10 %>
+        <% for p in 1..@page %>
+        <a href="/dungeons/<%= @d_id %>?p=<%= p %>"><div class="p" <%= id = "id=selected" if @p == p  %>><%= p %></div></a>
+        <% end %>
+      <% else %>
+        <% for p in @p..@p+9 %>
+        <div class="p" <%= id = "id=selected" %>><%= p %></div>
+        <% end %>
+      <% end %>
+
+        <!--<a href="/dungeons/<%= @d_id %>?p=<%= @p+1 %>"><div class="next" %>Next</div></a>-->
+
+    </div>
 
   </div>
 </div>
