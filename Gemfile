@@ -32,5 +32,6 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 gem "nokogiri", '1.6.2.1'
-gem 'thin'
 gem 'foreman'
+
+gem 'unicorn'
