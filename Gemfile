@@ -20,6 +20,7 @@ group :production do
   gem 'mysql2', '~> 0.3.16'
   gem 'mysql', '~> 2.9.1'
   gem 'rails_12factor'
+  gem 'unicorn'
 end
 
 gem 'sass-rails', '~> 4.0.3'
@@ -33,5 +34,3 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 gem "nokogiri", '1.6.2.1'
 gem 'foreman'
-
-gem 'unicorn'
