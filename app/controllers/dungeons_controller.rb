@@ -11,14 +11,15 @@ class DungeonsController < ApplicationController
         enemies.push(row)
       end
       render json: enemies
+    else
+      ua = request.env["HTTP_USER_AGENT"]
+      if(ua.include?('Mobile') || ua.include?('Android'))
+        render template: "dungeons/new_s"
+      else
+        render template: "dungeons/new"
+      end
     end
 
-    ua = request.env["HTTP_USER_AGENT"]
-    if(ua.include?('Mobile') || ua.include?('Android'))
-      render template: "dungeons/new_s"
-    else
-      render template: "dungeons/new"
-    end
   end
 
   def show
