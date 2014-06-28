@@ -1,0 +1,39 @@
+<div class="show-wrapper-s">
+
+  <div class="show-header-s">
+    <a href="/"><h1 class="site-title-s">StoneJab</h1></a>
+  </div>
+
+  <h4>ダンジョン選択</h4>
+  <%= form_tag('/dungeons', method: :post, :class => "dungeon-form" ) do %>
+
+    <%= select :page, :name, {"Railsの基礎" => "rails_base", "Rubyの基礎" => "ruby_base"} %>
+
+
+    <div class="select-monster">
+      <h4>パーティーモンスター選択</h4>
+
+      <div class="input-monster-box">
+        <%= text_field_tag 'leader', nil, class: 'input-leader', maxlength: "32", placeholder: 'リーダー' %>
+        <div class="select-leader-box"></div>
+
+        <%= text_field_tag 'friend', nil, class: 'input-friend', maxlength: "32", placeholder: 'フレンド' %>
+        <div class="select-friend-box"></div>
+
+        <%= text_field_tag 'sub1', nil, class: 'input-sub1', maxlength: "32", placeholder: 'サブ' %>
+        <div class="select-sub1-box"></div>
+
+        <%= text_field_tag 'sub2', nil, class: 'input-sub2', maxlength: "32", placeholder: 'サブ' %>
+        <div class="select-sub2-box"></div>
+
+        <%= text_field_tag 'sub3', nil, class: 'input-sub3', maxlength: "32", placeholder: 'サブ' %>
+        <div class="select-sub3-box"></div>
+
+        <%= text_field_tag 'sub4', nil, class: 'input-sub4', maxlength: "32", placeholder: 'サブ' %>
+        <div class="select-sub4-box"></div>
+      </div>
+    </div>
+
+  <% end %>
+
+</div>
