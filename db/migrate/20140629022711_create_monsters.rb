@@ -2,18 +2,18 @@ class CreateMonsters < ActiveRecord::Migration
   def change
     create_table :monsters do |t|
       t.string :name
-      t.string :element
+      t.string :main_element
       t.string :sub_element
-      t.string :rare
-      t.integer :cost
-      t.string :type
+      t.string :main_type
       t.string :sub_type
-      t.integer :hp
-      t.integer :atk
-      t.integer :heal
+      t.integer :cost
+      t.integer :rare
+      t.string :hp
+      t.string :atk
+      t.string :heal
       t.string :skill
       t.string :leader_skill
-      t.string :arousal
+      t.string :arousal1
       t.string :arousal2
       t.string :arousal3
       t.string :arousal4

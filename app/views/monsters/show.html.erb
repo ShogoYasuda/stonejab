@@ -1,24 +1,36 @@
 <div class="show-wrapper">
 
+  <%= form_tag('/dungeons', method: :post, :class => "dungeon-form" ) do %>
+  <div class="tag">
+    主属性 : <span>火</span><span>水</span><span>木</span><span>光</span><span>闇</span><br>
+    副属性 : <span>火</span><span>水</span><span>木</span><span>光</span><span>闇</span><br>
+    主タイプ : <span>ドラゴン</span><span>水</span><span>木</span><span>光</span><span>闇</span><br>
+    副タイプ : <span>ドラゴン</span><span>水</span><span>木</span><span>光</span><span>闇</span><br>
+    コスト : <span>10以下</span><span>15以下</span><span>20以下</span><br>
+    レア : <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><br>
+  </div>
+  <% end %>
+
   <div class="monster-box">
 
-    <div class="monster">
-      <%= image_tag("monsters/ティラ.png", :class => "monster-image") %>
-      <div class="monster-data">
-        <div id="monster-name">ティラ</div><br>
-        <div id="monster-element">火/火</div>
-        <div id="monster-type">ドラゴン/体力</div>
-        <div id="monster-element">コスト: 10</div>
-        <div id="monster-element">レア: ★6</div><br>
-        <div class="monster-status" id="hp">HP: 100</div>
-        <div class="monster-status" id="atk">攻撃: 100</div>
-        <div class="monster-status" id="heal">回復: 100</div>
-        <div class="monster-status" id="hp">S: 火の力</div>
-        <div class="monster-status" id="atk">LS: 火の力</div>
-        <div class="monster-status" id="heal">覚醒: 火の力</div>
+    <% @monsters.each do |row| %>
+      <div class="monster">
+        <%= image_tag("monsters/#{row.name}.png", :class => "monster-image") %>
+        <div class="monster-data">
+          <div id="monster-name"><%= row.name %></div><br>
+          <div id="monster-element"><%= row.main_element %>/<%= row.sub_element %></div>
+          <div id="monster-type"><%= row.main_type %>/<%= row.sub_type %></div>
+          <div id="monster-element">コスト: <%= row.cost %></div>
+          <div id="monster-element">レア: ★<%= row.rare %></div><br>
+          <div class="monster-status" id="hp">HP: <%= row.hp %></div>
+          <div class="monster-status" id="atk">攻撃: <%= row.atk %></div>
+          <div class="monster-status" id="heal">回復: <%= row.heal %></div>
+          <div class="monster-status" id="hp">S: <%= row.skill %></div>
+          <div class="monster-status" id="atk">LS: <%= row.leader_skill %></div><br>
+          <div class="monster-status" id="heal">覚醒: <%= row.arousal1 %></div>
+        </div>
       </div>
-    </div>
-    <div class="monster"></div>
+    <% end %>
 
   </div>
 

@@ -3,18 +3,18 @@
 FactoryGirl.define do
   factory :monster do
     name "MyString"
-    element "MyString"
+    main_element "MyString"
     sub_element "MyString"
-    rare "MyString"
-    cost 1
-    type ""
+    main_type "MyString"
     sub_type "MyString"
-    hp 1
-    atk 1
-    heal 1
+    cost 1
+    rare 1
+    hp "MyString"
+    atk "MyString"
+    heal "MyString"
     skill "MyString"
     leader_skill "MyString"
-    arousal "MyString"
+    arousal1 "MyString"
     arousal2 "MyString"
     arousal3 "MyString"
     arousal4 "MyString"
