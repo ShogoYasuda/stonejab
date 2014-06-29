@@ -5,6 +5,7 @@ class MonstersController < ApplicationController
 
   def show
     @monsters = Monster.where("id > 0 AND id < 13")
+    @count = Monster.count
   end
 
 end
