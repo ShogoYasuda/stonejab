@@ -2,8 +2,18 @@
 
   <%= form_tag('/dungeons', method: :post, :class => "dungeon-form" ) do %>
   <div class="tag">
-    主属性 : <span>火</span><span>水</span><span>木</span><span>光</span><span>闇</span><br>
-    副属性 : <span>火</span><span>水</span><span>木</span><span>光</span><span>闇</span><br>
+    主属性 : <%= radio_button_tag "main_element", "fire", false, class: "main-element" %><label for="main_element_fire" class="main-element-label" id="main-element-fire">火</label>
+             <%= radio_button_tag "main_element", "water", false, class: "main-element" %><label for="main_element_water" class="main-element-label" id="main-element-water">水</label>
+             <%= radio_button_tag "main_element", "wood", false, class: "main-element" %><label for="main_element_wood" class="main-element-label" id="main-element-wood">木</label>
+             <%= radio_button_tag "main_element", "light", false, class: "main-element" %><label for="main_element_light" class="main-element-label" id="main-element-light">光</label>
+             <%= radio_button_tag "main_element", "dark", false, class: "main-element" %><label for="main_element_dark" class="main-element-label" id="main-element-dark">闇</label><br>
+
+
+    副属性 : <%= radio_button_tag "sub_element", "fire", false, class: "sub-element" %><label for="sub_element_fire" class="sub-element-label" id="sub-element-fire">火</label>
+             <%= radio_button_tag "sub_element", "water", false, class: "sub-element" %><label for="sub_element_water" class="sub-element-label" id="sub-element-water">水</label>
+             <%= radio_button_tag "sub_element", "wood", false, class: "sub-element" %><label for="sub_element_wood" class="sub-element-label" id="sub-element-wood">木</label>
+             <%= radio_button_tag "sub_element", "light", false, class: "sub-element" %><label for="sub_element_light" class="sub-element-label" id="sub-element-light">光</label>
+             <%= radio_button_tag "sub_element", "dark", false, class: "sub-element" %><label for="sub_element_dark" class="sub-element-label" id="sub-element-dark">闇</label><br>
     主タイプ : <span>ドラゴン</span><span>水</span><span>木</span><span>光</span><span>闇</span><br>
     副タイプ : <span>ドラゴン</span><span>水</span><span>木</span><span>光</span><span>闇</span><br>
     コスト : <span>10以下</span><span>15以下</span><span>20以下</span><br>
@@ -18,8 +28,24 @@
         <%= image_tag("monsters/#{row.name}.png", :class => "monster-image") %>
         <div class="monster-data">
           <div id="monster-name"><%= row.name %></div><br>
-          <div id="monster-element"><%= row.main_element %>/<%= row.sub_element %></div>
-          <div id="monster-type"><%= row.main_type %>/<%= row.sub_type %></div>
+          <div id="monster-element">
+            <%= if row.main_element == "fire" then "火"
+                elsif row.main_element == "water" then "水"
+                elsif row.main_element == "wood" then "木"
+                elsif row.main_element == "light" then "光"
+                elsif row.main_element == "dark" then "闇"
+                end
+            %> /
+            <%= if row.sub_element == "fire" then "火"
+                elsif row.sub_element == "water" then "水"
+                elsif row.sub_element == "wood" then "木"
+                elsif row.sub_element == "light" then "光"
+                elsif row.sub_element == "dark" then "闇"
+                else "なし"
+                end
+            %>
+          </div>
+          <div id="monster-type"><%= row.main_type %> /<%= if row.sub_type.empty? then "なし" else row.sub_type end %></div>
           <div id="monster-element">コスト: <%= row.cost %></div>
           <div id="monster-element">レア: ★<%= row.rare %></div><br>
           <div class="monster-status" id="hp">HP: <%= row.hp %></div>

@@ -5,6 +5,69 @@
 .tag {
   width: 640px;
   margin: auto;
+
+  .main-element {
+    display: none;
+  }
+  .main-element-label {
+    display: inline-block;
+    cursor: pointer;
+    margin: 4px 0 4px 0;
+    padding: 0px 10px 0px 10px;
+    border: 2px solid #e74c3c;
+    border-radius: 8px;
+  }
+  #main-element-fire {
+    color: #e74c3c;
+    border: 2px solid #e74c3c;
+  }
+  #main-element-water {
+    color: #3498db;
+    border: 2px solid #3498db;
+  }
+  #main-element-wood {
+    color: #2ecc71;
+    border: 2px solid #2ecc71;
+  }
+  #main-element-light {
+    color: #f1c40f;
+    border: 2px solid #f1c40f;
+  }
+  #main-element-dark {
+    color: #9b59b6;
+    border: 2px solid #9b59b6;
+  }
+  .sub-element {
+    display: none;
+  }
+  .sub-element-label {
+    display: inline-block;
+    cursor: pointer;
+    margin: 4px 0 4px 0;
+    padding: 0px 10px 0px 10px;
+    border: 2px solid #e74c3c;
+    border-radius: 8px;
+  }
+  #sub-element-fire {
+    color: #e74c3c;
+    border: 2px solid #e74c3c;
+  }
+  #sub-element-water {
+    color: #3498db;
+    border: 2px solid #3498db;
+  }
+  #sub-element-wood {
+    color: #2ecc71;
+    border: 2px solid #2ecc71;
+  }
+  #sub-element-light {
+    color: #f1c40f;
+    border: 2px solid #f1c40f;
+  }
+  #sub-element-dark {
+    color: #9b59b6;
+    border: 2px solid #9b59b6;
+  }
 }
 
 .monster-box {

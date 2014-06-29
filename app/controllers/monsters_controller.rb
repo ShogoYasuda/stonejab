@@ -4,7 +4,7 @@ class MonstersController < ApplicationController
   end
 
   def show
-    @monsters = Monster.where("main_type = 'ドラゴンタイプ'")
+    @monsters = Monster.where("id > 0 AND id < 13")
   end
 
 end
