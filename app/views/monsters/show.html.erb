@@ -4,9 +4,6 @@
   <%= form_tag('/dungeons', method: :post, :class => "dungeon-form" ) do %>
   <div class="tag">
     <h2>未実装</h2>
-    <div id="name">
-      <%= @monsters.count %>
-    </div>
 
     主属性 : <%= radio_button_tag "main_element", "fire", false, class: "main-element" %><label for="main_element_fire" class="main-element-label" id="main-element-fire">火</label>
              <%= radio_button_tag "main_element", "water", false, class: "main-element" %><label for="main_element_water" class="main-element-label" id="main-element-water">水</label>
