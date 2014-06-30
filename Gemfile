@@ -2,8 +2,9 @@ source 'https://rubygems.org'
 ruby '2.1.0'
 gem 'rails', '4.1.1'
 
+gem 'mysql2', '~> 0.3.16'
+
 group :development, :test do
-  gem 'mysql2', '~> 0.3.16'
   gem 'rspec-rails', '~> 3.0.1'
   gem 'factory_girl_rails', '~> 4.4.1'
 end
@@ -17,7 +18,6 @@ group :test do
 end
 
 group :production do
-  gem 'mysql2', '~> 0.3.16'
   gem 'mysql', '~> 2.9.1'
   gem 'rails_12factor'
   gem 'unicorn'

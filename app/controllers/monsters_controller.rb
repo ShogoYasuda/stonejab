@@ -4,7 +4,8 @@ class MonstersController < ApplicationController
   end
 
   def show
-    @monsters = Monster.where("id < 21")
+    @monsters = Monster.where("id > 1390")
+    @monster = Monster.last
   end
 
 end
