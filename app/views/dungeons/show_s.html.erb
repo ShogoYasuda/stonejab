@@ -1,6 +1,6 @@
-<div class="show-wrapper-s">
+<div class="wrapper-s">
 
-  <div class="show-header-s">
+  <div class="header-s">
     <a href="/"><h1 class="site-title-s">StoneJab</h1></a>
   </div>
 
@@ -15,7 +15,7 @@
   <div class="main">
 
     <% if @no_exist %>
-      <h2>※<%= @no_exist %></h2>
+      <h2 class="no-exist">※<%= @no_exist %></h2>
     <% else %>
       <% @guide.each do |row| %>
         <div class="guide">
