@@ -22,7 +22,7 @@ class DungeonsController < ApplicationController
     else
       ua = request.env["HTTP_USER_AGENT"]
       if(ua.include?('Mobile') || ua.include?('Android'))
-        render template: "dungeons/new_s"
+        redirect_to "/"
       else
         render template: "dungeons/new"
       end
