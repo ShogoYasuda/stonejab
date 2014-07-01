@@ -7,6 +7,7 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= stylesheet_link_tag    'http://fonts.googleapis.com/css?family=Galindo', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= favicon_link_tag '/assets/icon/favicon.ico' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -17,7 +18,7 @@
   <div class="header">
     <a href="/"><h1 class="site-title">StoneJab</h1></a>
     <nav>
-      <ul>    
+      <ul>
         <li class="nav-list">
           <a href="/monsters" class="book">図鑑</a>
         </li>
