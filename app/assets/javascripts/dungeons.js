@@ -1,5 +1,10 @@
 $(function() {
 
+  $('.header').click(function() {
+    $('.wrapper').append("<img class='enemy' src='/assets/monsters/ティラ.png'>")
+  })
+  //("<img class='enemy' src='/assets/monsters/ティラ.png'>")
+
 var renamed_monsters = ["トール-007030028166e11a021ff3515ddb876f.png",
 "ピクシー-0124b9a3499cf44cc5c56e054108b5c4.png",
 "サーティワン・アメリット-020d89de7cb599b3d608f9f639348ab2.png",
