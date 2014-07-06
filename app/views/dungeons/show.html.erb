@@ -17,7 +17,7 @@
   <div class="show-main">
 
     <% if @no_exist %>
-      <h2>※<%= @no_exist %></h2>
+      <h2 class="no-exist">※<%= @no_exist %></h2>
     <% else %>
       <% @guide.each do |row| %>
         <div class="guide">
