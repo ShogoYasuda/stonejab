@@ -79,7 +79,10 @@ nav {
   border-radius: 4px;
   text-shadow: 1px 1px 1px #000;
 }
-
+.description {
+  color: #2ecc71;
+  font-size: 11px;
+}
 .footer {
   position: relative;
   width: 100%;
