@@ -24,3 +24,4 @@ doc/
 .idea
 .secret
 _unicorn.rb
+/public/assets
